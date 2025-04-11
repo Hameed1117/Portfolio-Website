@@ -3,14 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <title>AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 <body>
-    <h1>Khadhar Hameed Khan Pathan</h1>
-    <p>Hi Folks, Work is in progress. Updates will come soon..
-        See you again.</p>
-    <h2>Get in Touch</h2>
-    <a href="https://www.linkedin.com/in/khadhar-hameed-khan-pathan-b0a6072a9/">linkedin</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Khadhar Hameed Khan Pathan</a>
+            <div class="nav-links">
+                <a href="#about" class="active">About</a>
+                <a href="#featured">Featured Work</a>
+                <!--
+                <a  href="#projects">Projects</a>
+                -->
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Building the Future with AI</h1>
+            <div class="typing-text"></div>
+            <p class="hero-text">Crafting innovative AI solutions that transform ideas into reality</p>
+            <div class="hero-buttons">
+                <a href="#featured" class="btn">View My Work</a>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="profile-section" data-aos="fade-right">
+                    <div class="profile-container">
+                        <div class="profile-img-wrapper">
+                            <img src="assets/IMG_0583.JPEG" alt="Profile" class="profile-img">
+                        </div>
+                        <div class="profile-background"></div>
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p>I'm a passionate AI Engineer specializing in developing cutting-edge AI solutions. With expertise in Machine Learning, Deep learning, Natural language processing and Computer vision. I create intelligent systems that solve real-world problems.</p>
+                    <p>My work focuses on pushing the boundaries of what's possible with artificial intelligence, from developing sophisticated neural networks to implementing state-of-the-art algorithms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="featured" class="featured-work">
+        <div class="container">
+            <h2 data-aos="fade-up">Featured Work</h2>
+            
+            <div class="featured-project" data-aos="fade-up">
+                <img src="assets\imdb projetc.png" alt="AI Project 1" class="featured-image">
+                <div class="featured-content">
+                    <h3 class="featured-title">Sentiment Analysis</h3>
+                    <p class="featured-description">I built a robust sentiment analysis pipeline for movie reviews, combining classical machine learning techniques and cutting-edge deep learning models. By implementing and comparing Logistic Regression, Naive Bayes, LSTM, and Bidirectional LSTM, I demonstrated deep expertise in both traditional algorithms and modern neural networks, delivering clear insights into their performance and scalability.</p>
+                    <div class="project-tech">
+                        <span>Natural Language Processing</span>
+                        <span>Machine Learning</span>
+                        <span>Deep Learning</span>
+                        <span>Tensorflow</span>
+                        <span>Spacy</span>
+                        <span>Keras</span>
+                        <span>Numpy</span>
+                        <span>Seaborn</span>
+                        <span>Scikit-Learn</span>
+                        
+
+
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="https://github.com/Hameed1117/NLP-Sentiment-Analysis" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-project" data-aos="fade-up">
+                <img src="assets\Drone.png" alt="AI Project 2" class="featured-image">
+                <div class="featured-content">
+                    <h3 class="featured-title">Reinforcement Learning Based Autonomous Drone</h3>
+                    <p class="featured-description">This project integrates Microsoft AirSim with cutting-edge reinforcement learning techniques to engineer an autonomous drone agent. It encompasses a seamless drone simulation environment, interactive manual control options, and a baseline random navigation model. Leveraging a custom Gym environment, the project trains a state-of-the-art PPO-based RL agent, advancing innovative approaches in autonomous aerial navigation.</p>
+                    <div class="project-tech">
+                        <span>Reinforcement Learning</span>
+                        <span>AirSim</span>
+                        <span>Unreal Engine</span>
+                        <span>Gymnasium</span>
+                        <span>Tensorflow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="https://github.com/Hameed1117/RL_Drone_Agent" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
+    <!-- Projects Section -->
+    <!--
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">Other Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <img src="assets/project1.jpg" alt="Toxic Comment Classification" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Toxic Comment Classification</h3>
+                        <p class="project-description">A machine learning model that classifies toxic comments to maintain a healthy online community.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Scikit-Learn</span>
+                            <span>NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <img src="assets/project2.jpg" alt="Emotion Detection using ML" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Emotion Detection using ML</h3>
+                        <p class="project-description">An AI system that detects emotions from text to understand user sentiment.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <img src="assets/project3.jpg" alt="Reinforcement Learning Based Autonomous" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Reinforcement Learning Based Autonomous</h3>
+                        <p class="project-description">An advanced reinforcement learning system for autonomous decision-making.</p>
+                        <div class="project-tech">
+                            <span>PyTorch</span>
+                            <span>RL</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <img src="assets/project4.jpg" alt="AI Chatbot using NLP" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">AI Chatbot using NLP</h3>
+                        <p class="project-description">A conversational AI chatbot that uses natural language processing to interact with users.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>NLTK</span>
+                            <span>Chatbot</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out for collaborations or just a friendly hello</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/khadhar-hameed-khan-pathan-b0a6072a9/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com/Hameed1117" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Projects</span>
+                </a>
+            </div>
+            <!--
+            <form id="contact-form" action="https://formspree.io/f/xqkzqyqy" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+                
+                <div class="form-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Message sent successfully!</span>
+                </div>
+            </form>
+            -->
+            <form id="contact-form" action="https://formspree.io/f/mldjzegr" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                </div>
+            
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+                
+                <div class="form-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Message sent successfully!</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Theme Toggle -->
+     <!--
+    <button class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+    -->
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
-</html>
+</html> 
