@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sizing Demo - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .demo-section {
+            margin-bottom: 40px;
+        }
+        
+        .demo-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #7000FF;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .demo-item {
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 15px;
+            background: #151515;
+        }
+        
+        .demo-item h4 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .demo-item p {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            margin-bottom: 15px;
+        }
+        
+        .demo-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .demo-image.cover {
+            object-fit: cover;
+        }
+        
+        .demo-image.contain {
+            object-fit: contain;
+            background-color: #151515;
+        }
+        
+        .demo-image.fill {
+            object-fit: fill;
+        }
+        
+        .demo-image.scale-down {
+            object-fit: scale-down;
+            background-color: #151515;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>Featured Project Image Sizing Demo</h1>
+        <p>This demo shows how different image sizes and aspect ratios are handled in the featured project section.</p>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Current Featured Project Image Sizing</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h4>Desktop (992px+)</h4>
+                    <p>Width: 100% of grid column (1.5fr)<br>Height: 400px<br>Object-fit: cover</p>
+                    <img src="assets/imdb projetc.png" alt="Demo" class="demo-image cover">
+                </div>
+                <div class="demo-item">
+                    <h4>Tablet (768px-992px)</h4>
+                    <p>Width: 100% of container<br>Height: 300px<br>Object-fit: cover</p>
+                    <img src="assets/ADURL.jpg" alt="Demo" class="demo-image cover">
+                </div>
+                <div class="demo-item">
+                    <h4>Mobile (480px-768px)</h4>
+                    <p>Width: 100% of container<br>Height: 250px<br>Object-fit: cover</p>
+                    <img src="assets/Drone.png" alt="Demo" class="demo-image cover">
+                </div>
+                <div class="demo-item">
+                    <h4>Small Mobile (≤480px)</h4>
+                    <p>Width: 100% of container<br>Height: 200px<br>Object-fit: cover</p>
+                    <img src="assets/IMG_0583.JPEG" alt="Demo" class="demo-image cover">
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Object-Fit Options</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h4>Cover (Default)</h4>
+                    <p>Maintains aspect ratio, fills container, may crop</p>
+                    <img src="assets/imdb projetc.png" alt="Cover" class="demo-image cover">
+                </div>
+                <div class="demo-item">
+                    <h4>Contain</h4>
+                    <p>Maintains aspect ratio, fits entirely, may have empty space</p>
+                    <img src="assets/imdb projetc.png" alt="Contain" class="demo-image contain">
+                </div>
+                <div class="demo-item">
+                    <h4>Fill</h4>
+                    <p>Stretches to fill container, may distort</p>
+                    <img src="assets/imdb projetc.png" alt="Fill" class="demo-image fill">
+                </div>
+                <div class="demo-item">
+                    <h4>Scale-down</h4>
+                    <p>Like contain but never scales up</p>
+                    <img src="assets/imdb projetc.png" alt="Scale-down" class="demo-image scale-down">
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">How to Use Different Sizing Options</h2>
+            <div class="demo-item">
+                <h4>CSS Classes Available:</h4>
+                <ul>
+                    <li><code>.featured-image</code> - Default (object-fit: cover)</li>
+                    <li><code>.featured-image.contain</code> - For images that should show completely</li>
+                    <li><code>.featured-image.fill</code> - For images that should stretch to fill</li>
+                    <li><code>.featured-image.scale-down</code> - For images that should never scale up</li>
+                </ul>
+                <h4>Example Usage in HTML:</h4>
+                <pre><code>&lt;img src="your-image.jpg" alt="Project" class="featured-image contain"&gt;</code></pre>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Automatic Resizing Features</h2>
+            <div class="demo-item">
+                <ul>
+                    <li><strong>Responsive Heights:</strong> Automatically adjusts image height based on screen size</li>
+                    <li><strong>Aspect Ratio Preservation:</strong> Images maintain their original proportions</li>
+                    <li><strong>Loading States:</strong> Smooth loading transitions with blur effects</li>
+                    <li><strong>Error Handling:</strong> Graceful fallbacks for broken images</li>
+                    <li><strong>Performance Optimization:</strong> Data attributes for potential server-side optimization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
