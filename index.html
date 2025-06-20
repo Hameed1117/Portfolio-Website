@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khadhar Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <!-- Logo/Name on the left -->
+        <div class="logo">
+            <a href="#home">Khadhar</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Navigation menu on the right -->
+        <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-btn">Theme</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="theme-option" data-theme="light">Light</a></li>
+                    <li><a href="#" class="theme-option" data-theme="dark">Dark</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <!-- Mobile only theme buttons (hidden by default) -->
+        <ul class="mobile-theme-menu">
+            <li><button class="mobile-theme-btn theme-option" data-theme="light">Light Theme</button></li>
+            <li><button class="mobile-theme-btn theme-option" data-theme="dark">Dark Theme</button></li>
+        </ul>
+    </nav>
+    <!-- Main heading with name -->
+    <h1 class="main-heading">Development in progress</h1>
+
+    <!-- JavaScript for theme switching -->
+    <script src="js/script.js"></script>
 </body>
 </html>

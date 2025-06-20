@@ -1,0 +1,396 @@
+/* ===========================================
+   RESET AND BASE STYLES
+=========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+    /* Light theme colors (default) */
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* ===========================================
+   DARK THEME STYLES
+=========================================== */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* ===========================================
+   NAVIGATION BAR STYLES
+=========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    /* Light theme navbar */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme navbar */
+body.dark-theme .navbar {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* ===========================================
+   LOGO STYLES
+=========================================== */
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #333333;
+}
+
+body.dark-theme .logo a {
+    color: #ffffff;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+    color: #007bff;
+}
+
+/* ===========================================
+   NAVIGATION MENU STYLES
+=========================================== */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #333333;
+}
+
+body.dark-theme .nav-menu a {
+    color: #ffffff;
+}
+
+/* Hover effects for navigation links */
+.nav-menu a:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+body.dark-theme .nav-menu a:hover {
+    background-color: #404040;
+    color: #4da6ff;
+}
+
+/* Active/Click effect for navigation links */
+.nav-menu a:active {
+    transform: scale(0.95);
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* ===========================================
+   DROPDOWN STYLES
+=========================================== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+}
+
+/* Invisible bridge to prevent dropdown from closing */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 22px;
+    background: transparent;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 22px);
+    right: 0;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    border-radius: 8px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    list-style: none;
+    /* Light theme dropdown */
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme dropdown */
+body.dark-theme .dropdown-menu {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #333333;
+}
+
+body.dark-theme .dropdown-menu a {
+    color: #ffffff;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    transform: translateX(5px);
+}
+
+body.dark-theme .dropdown-menu a:hover {
+    background-color: #404040;
+}
+
+/* ===========================================
+   MAIN CONTENT STYLES
+=========================================== */
+.main-heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+    transition: all 0.3s ease;
+}
+
+.main-heading:hover {
+    transform: scale(1.02);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .main-heading:hover {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* ===========================================
+   THEME TOGGLE BUTTON STYLES
+=========================================== */
+.theme-option {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.theme-option:hover::before {
+    left: 100%;
+}
+
+/* ===========================================
+   MOBILE THEME MENU (HIDDEN BY DEFAULT)
+=========================================== */
+.mobile-theme-menu {
+    display: none;
+}
+
+/* ===========================================
+   MOBILE MENU BUTTON STYLES
+=========================================== */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+body.dark-theme .mobile-menu-btn span {
+    background-color: #fff;
+}
+
+/* Mobile menu button animation when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    /* Hide the desktop theme dropdown on mobile */
+    .dropdown {
+        display: none;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        gap: 0;
+        padding: 0;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+    
+    body.dark-theme .nav-menu {
+        background-color: #2d2d2d;
+        box-shadow: 0 10px 27px rgba(255, 255, 255, 0.05);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        display: block;
+        padding: 1rem;
+        border: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Show mobile theme menu on mobile */
+    .mobile-theme-menu {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: calc(70px + 200px);
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+    
+    body.dark-theme .mobile-theme-menu {
+        background-color: #2d2d2d;
+        box-shadow: 0 10px 27px rgba(255, 255, 255, 0.05);
+    }
+    
+    .mobile-theme-menu.active {
+        left: 0;
+    }
+    
+    .mobile-theme-menu li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .mobile-theme-btn {
+        font-size: 1.1rem;
+        display: block;
+        padding: 1rem;
+        border: none;
+        width: 100%;
+        text-align: center;
+        background: none;
+        color: #333;
+        cursor: pointer;
+    }
+    
+    body.dark-theme .mobile-theme-btn {
+        color: #fff;
+    }
+    
+    .mobile-theme-btn:hover {
+        background-color: #f0f0f0;
+        color: #007bff;
+    }
+    
+    body.dark-theme .mobile-theme-btn:hover {
+        background-color: #404040;
+        color: #4da6ff;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 120px;
+    }
+
+    .main-heading {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+}
